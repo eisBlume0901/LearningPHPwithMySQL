@@ -7,7 +7,8 @@
 
 $age = 20;
 
-if ($age >= 18) {
+if ($age >= 18)
+{
     echo ' You are eligible to vote';
 }
 else
@@ -21,8 +22,10 @@ echo date('M'); // M = Month, Feb
 echo date ('D'); // D = Day, Sat
 echo date ('j'); // j = Day of the Month, 10 derived from Feb 10, 2024
 
-$hourTime = 15;
 
+// If else
+// Version 1 - If else statement
+$hourTime = 15;
 if ($hourTime < 12)
     echo ' Good morning'; // Curly brackets can be omitted
 else if ($hourTime < 17)
@@ -38,18 +41,40 @@ $posts = ['First Post'];
 
 
 // Array functions empty()
-if (!empty($posts)) {
+if (!empty($posts))
+{
     echo $posts[0];
-} else {
+}
+else
+{
     echo 'No posts';
 }
 
-$posts = []; // It is top-down approach. Variables assigned to another value would be overriden
-
-// Ternary Expression
+// Version 2 - Ternary Expression
+$posts = []; // It is top-down approach.
+// Variables assigned to another value would be overridden
 echo !empty($posts) ? $posts[0] : 'No posts';
 
+// Version 3 - Coalesce Expression
 $posts = ['There is a post'];
-
-// Coalesce Expression
 $firstPost = $posts[0] ?? null;
+echo $firstPost;
+
+// Version 4 - Switch case statement
+
+$favColor = 'blue';
+
+switch ($favColor) {
+    case 'red':
+        echo ' Your favorite color is red';
+        break;
+    case 'blue':
+        echo ' Your favorite color is blue';
+        break;
+    case 'green':
+        echo ' Your favorite color is green';
+        break;
+    default:
+        echo ' Your favorite color is not red, green, or blue';
+        break;
+}
