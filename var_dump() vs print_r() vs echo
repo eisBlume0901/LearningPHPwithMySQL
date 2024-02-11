@@ -1,0 +1,10 @@
+var_dump()
+- provides detailed information about the variable
+    data types
+    sizes
+print_r()
+- offers a more readable representation of arrays and objects
+    in comparison with var_dump(), it lacks some details
+echo
+- commonly used for simple output and HTML generation, specifically not for
+debugging
