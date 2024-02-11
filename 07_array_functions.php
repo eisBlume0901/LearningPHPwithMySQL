@@ -74,7 +74,7 @@ echo '<br>';
 
 // merging two arrays into one
 // Version 1
-// merge()
+// merge() function
 $arr1 = [1, 2, 3, 4];
 $arr2 = [5, 6, 7];
 
@@ -83,10 +83,10 @@ print_r($mergedArray); // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [
 echo '<br>';
 
 // Version 2
-// [...$arr1, ...$arr2]
+// [...$arr1, ...$arr2] spread separator
 $mergedArray2 = [...$arr1, ...$arr2];
-print_r($mergedArray2);
-echo '<br>'; // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 [6] => 7 )
+print_r($mergedArray2); // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 [6] => 7 )
+echo '<br>';
 
 
 // array_combine() - key value pair it is like hashmap in Java
@@ -113,7 +113,33 @@ echo '<br>';
 
 
 // range() - creating a ranged value from the specified start and end
-$numbersFrom1To20 = range(1, 20);
-print_r($numbersFrom1To20); // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 [6] => 7 [7] => 8 [8] => 9 [9] => 10 [10] => 11 [11] => 12 [12] => 13 [13] => 14 [14] => 15 [15] => 16 [16] => 17 [17] => 18 [18] => 19 [19] => 20 )
+$numbersFrom1To20 = range(1, 5);
+print_r($numbersFrom1To20); // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 )
 echo '<br>';
 
+
+// array_map() converts/transforms the array elements into different type and value
+/*
+ * Counterpart in Java:
+ * list.stream().map(parameters -> expression).collect(Collectors.toList())
+ */
+$evenNumbers = array_map(function($number) {
+    return $number * 2;
+}, $numbersFrom1To20);
+print_r($evenNumbers); // Array ( [0] => 2 [1] => 4 [2] => 6 [3] => 8 [4] => 10 )
+echo '<br>';
+
+
+// array_filter() filters the array elements with the specified condition
+/*
+ * Counterpart in Java:
+ * list.stream().filter(parameter -> expression).collect(Collectors.toList());
+ */
+$lessThan10 = array_filter($numbersFrom1To20, fn($number) => $number < 10);
+print_r($lessThan10);
+echo '<br>';
+
+// array_reduce() reduce the array element into one value
+$sumOfEvenNumbers = array_reduce($lessThan10, fn($carry, $number) => $carry + $number);
+print_r($sumOfEvenNumbers);
+echo '<br>';
