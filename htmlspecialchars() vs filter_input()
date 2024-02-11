@@ -1,0 +1,22 @@
+htmlspecialchars()
+Purpose: used for escaping special characters in strings before displaying them in HTML
+Functionality: converts like <, >, & and quotes (' and ") to their corresponding HTML entities
+Common Use Case:
+- When echoing user input or dynamic data into HTML elements (e.g., form fields, labels, or paragraphs).
+Example:
+$userInput = $_POST['name'];
+$encodedName = htmlspecialchars($userInput, ENT_QUOTES);
+echo "Hello, $encodedName!";
+
+
+
+filter_input()
+Purpose: retrieves and filters input data from external sources (e.g., form submissions)
+Functionality:
+- Filters input data based on specified filters (e.g., FILTER_SANITIZE_SPECIAL_CHARS or FILTER_SANITIZE_NUMBER_INT).
+- Sanitizes input by removing or escaping specific characters.
+Common Use Case:
+- When handling form submissions and ensuring data integrity.
+Example:
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+$age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);

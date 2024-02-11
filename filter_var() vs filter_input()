@@ -1,0 +1,18 @@
+filter_var():
+Purpose: Used for filtering and validating any variable (not limited to superglobals).
+Functionality:
+- Accepts any variable as input (e.g., a standalone variable, an expression, or a function result).
+- Requires you to handle undefined variable errors yourself.
+- Returns an empty string ("") if the variable doesn’t exist, along with a notice of an undefined index.
+Example:
+$foo = filter_var($_GET['foo'], FILTER_SANITIZE_NUMBER_INT);
+
+
+filter_input():
+Purpose: Specifically designed for retrieving and filtering external variables (from superglobals like $_GET, $_POST, etc.).
+Functionality:
+- Retrieves values directly from predefined superglobals (e.g., INPUT_GET, INPUT_POST).
+- Returns NULL if the variable doesn’t exist, without generating an error.
+- Independent of any modifications made to the superglobals during script execution.
+Example:
+$email = filter_input(INPUT_POST, '$_POST['email'], FILTER_SANITIZE_EMAIL);
