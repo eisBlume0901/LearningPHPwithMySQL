@@ -1,0 +1,29 @@
+SESSION VS COOKIES
+SESSION
+- LOCATION, SECURITY, DATA MODIFICATION:
+    stored on server, more secure, data cannot be tampered with by the user
+- STORAGE LIMIT:
+    no limit
+- PERFORMANCE:
+    slower than cookies
+    - because it requires network round trip to the server
+- USE CASE:
+    - when you want to store sensitive data
+    - when you want to store large amount of data
+    - when you want to store data that should not be tampered with by the user
+
+COOKIES
+- LOCATION, SECURITY, DATA MODIFICATION:
+    stored on user's/client's browser, less secure, user can modify the data
+- STORAGE LIMIT:
+    4KB
+- PERFORMANCE:
+    faster than sessions
+    - because it is stored on the client's browser
+- USE CASE:
+    - when you want to store non-sensitive data
+    - when you want to store small amount of data
+    - when you want to store data that can be tampered with by the user
+
+
+

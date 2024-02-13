@@ -23,6 +23,6 @@ if (isset($_COOKIE['name'])) {
 
 // Deleting a cookie
 setcookie('name', '', time() - 86400); // It will unset it since we change the value into empty
-?>
+
 
 
